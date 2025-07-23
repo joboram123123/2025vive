@@ -7,6 +7,9 @@ st.set_page_config(
     page_icon="👋",
 )
 
+st.write("#Hi")
+st.sidebar.success("Select")
+
 # worldtimeapi에서 서울시간 불러오기
 @st.cache_data(ttl=60)  # 60초마다 새로고침
 def get_seoul_time():
