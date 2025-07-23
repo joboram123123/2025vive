@@ -10,17 +10,14 @@ y = st.empty()
 y.write('please Click start button')
 
 # 타이머 시작/정지 버튼
-
 c1, c2, c3,_=st.columns([1,1,1,5])
 start = c1.button('시작', key=1)
 clear = c2.button('클리어', key=2)
 c3.button('리셋', key = 3)
 
-
-# 타이머 표시
-if st.session_state.running:
+if start:
     with y:
-        for i in range(n):
-            t=n-i
-            st.wirte('남은 시간 : {t}초')
+        for i in range(n+1):
+            t = n-i
+            st.write(f'카운트다운 {t} 초')
             time.sleep(1)
