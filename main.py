@@ -2,8 +2,10 @@ import streamlit as st
 import requests
 from datetime import datetime, timedelta
 import time
-
-st.title("🌐 서버 시간 기반 타이머 (서울 시간)")
+st.set_page_config(
+    page_title="Main-F",
+    page_icon="👋",
+)
 
 # worldtimeapi에서 서울시간 불러오기
 @st.cache_data(ttl=60)  # 60초마다 새로고침
