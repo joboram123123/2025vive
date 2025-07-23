@@ -2,7 +2,7 @@ import streamlit as st
 import time
 
 # 페이지 설정
-st.set_page_config(page_title="타이머", page_icon="⏱️", layout="centered")
+st.set_page_config(page_title="Timer", page_icon="⏱️", layout="centered")
 
 # 타이틀
 st.markdown("<h1 style='text-align: center; color: #4B8BBE;'>⏱️ 커스텀 타이머</h1>", unsafe_allow_html=True)
