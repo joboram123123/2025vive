@@ -3,12 +3,13 @@ import requests
 from datetime import datetime, timedelta
 import time
 st.set_page_config(
-    page_title="Main-F",
+    page_title="Hello",
     page_icon="👋",
 )
 
-st.write("#Hi")
-st.sidebar.success("Select")
+st.write("# Welcome to Streamlit! 👋")
+
+st.sidebar.success("Select a demo above.")
 
 # worldtimeapi에서 서울시간 불러오기
 @st.cache_data(ttl=60)  # 60초마다 새로고침
