@@ -1,19 +1,14 @@
 import streamlit as st
 import time
-
-# 페이지 설정
-st.set_page_config(page_title="Timer", page_icon="⏱️", layout="centered")
+st.set_page_config(page_title="Plotting Demo", page_icon="📈")
 
 st.markdown("# Plotting Demo")
 st.sidebar.header("Plotting Demo")
-
-
-st.button("Re-run")
-
-
-# 타이틀
-st.markdown("<h1 style='text-align: center; color: #4B8BBE;'>⏱️ 커스텀 타이머</h1>", unsafe_allow_html=True)
-
+st.write(
+    """This demo illustrates a combination of plotting and animation with
+Streamlit. We're generating a bunch of random numbers in a loop for around
+5 seconds. Enjoy!"""
+)
 # CSS 스타일
 st.markdown("""
     <style>
