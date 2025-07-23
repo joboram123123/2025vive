@@ -8,8 +8,35 @@ st.set_page_config(
 )
 
 st.write("# Welcome to Streamlit! 👋")
+st.markdown(
+    """
+    <style>
+    .go-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 24px;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition-duration: 0.3s;
+    }
+    .go-button:hover {
+        background-color: #45a049;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
-st.sidebar.success("Select a demo above.")
+st.markdown(
+    '<a href="https://2025vive-kjfajmxkrrc22dg89w9bu3.streamlit.app/" target="_blank">'
+    '<button class="go-button">타이머 페이지로 가기</button></a>',
+    unsafe_allow_html=True
+)
 
 # worldtimeapi에서 서울시간 불러오기
 @st.cache_data(ttl=60)  # 60초마다 새로고침
