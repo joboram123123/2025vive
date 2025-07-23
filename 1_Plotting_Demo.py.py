@@ -1,13 +1,34 @@
 import streamlit as st
 import time
 st.set_page_config(page_title="Plotting Demo", page_icon="📈")
+st.markdown(
+    """
+    <style>
+    .go-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 24px;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition-duration: 0.3s;
+    }
+    .go-button:hover {
+        background-color: #45a049;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
-st.markdown("# Plotting Demo")
-st.sidebar.header("Plotting Demo")
-st.write(
-    """This demo illustrates a combination of plotting and animation with
-Streamlit. We're generating a bunch of random numbers in a loop for around
-5 seconds. Enjoy!"""
+st.markdown(
+    '<a href="https://2025vive-kjfajmxkrrc22dg89w9bu3.streamlit.app/" target="_blank">'
+    '<button class="go-button">타이머 페이지로 가기</button></a>',
+    unsafe_allow_html=True
 )
 # CSS 스타일
 st.markdown("""
