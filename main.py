@@ -1,44 +1,29 @@
 import streamlit as st
 import time
 
+st.title("⏱️ Streamlit 타이머")
+
 # 세션 상태 초기화
-if "count" not in st.session_state:
-    st.session_state.count = 5
-if "running" not in st.session_state:
-    st.session_state.running = False
+n = st.number_input("타이머 시간을 초 단위로 입력하세요", min_value=1, max_value=3600, value=5, step=1)
 
 y = st.empty()
 y.write('please Click start button')
 
-# 버튼 구성
-c1, c2, c3, _ = st.columns([1, 1, 1, 5])
-start = c1.button('시작', key='start')
-clear = c2.button('클리어', key='clear')
-reset = c3.button('리셋', key='reset')
+# 타이머 시작/정지 버튼
+def toggle_timer():
+    if not st.session_state.running:
+        st.session_state.start_time = time.time()
+        st.session_state.running = True
+    else:
+        st.session_state.running = False
 
-# 버튼 동작 처리
-if start:
-    st.session_state.running = True
+if st.button("▶️ 타이머 시작 / 일시정지", on_click=toggle_timer):
+    pass
 
-if clear:
-    st.session_state.count = 0
-    st.session_state.running = False
-
-if reset:
-    st.session_state.count = 5
-    st.session_state.running = False
-
-# 타이머 작동
-if st.session_state.running and st.session_state.count > 0:
+# 타이머 표시
+if st.session_state.running:
     with y:
-        st.write(f'카운트다운 {st.session_state.count} 초')
-    time.sleep(1)
-    st.session_state.count -= 1
-    st.experimental_rerun()  # 여기까지 실행 후 멈춰야 함
-    st.stop()  # 이후 코드 실행 막기
-
-# 타이머 종료 메시지
-elif st.session_state.count == 0 and st.session_state.running:
-    with y:
-        st.success("⏰ 타이머 종료!")
-    st.session_state.running = False
+        for i in range(n):
+            t=n-i
+            st.wirte('남은 시간 : {t}초')
+            time.sleep(1)
